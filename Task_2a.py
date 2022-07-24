@@ -24,7 +24,7 @@ def the_game(numbers_of_candies: int, bot_info='Нет'):
     pool_candies = numbers_of_candies
     count = 1
     while pool_candies != 0:
-        if bot_info == 'Да':
+        if bot_info == 'да':
             if count % 2 != 0:
                 print(f'----------{count} раунд ----------')
                 pool_candies -= int(input('Сколько конфет вы берете: '))
@@ -44,13 +44,13 @@ def the_game(numbers_of_candies: int, bot_info='Нет'):
             print(f'Осталось {pool_candies} конфет')
             count += 1
 
-    if bot_info == "Да" and count % 2 != 0:
+    if bot_info == "да" and count % 2 != 0:
         print('Победил бот')
-    elif bot_info == "Да" and count % 2 == 0:
+    elif bot_info == "да" and count % 2 == 0:
         print('Вы победили бота!')
-    elif bot_info == "Нет" and count % 2 == 0:
+    elif bot_info == "нет" and count % 2 == 0:
         print('Победил первый игрок!')
-    elif bot_info == "Нет" and count % 2 != 0:
+    elif bot_info == "нет" and count % 2 != 0:
         print('Победил второй игрок!')
 
 
@@ -61,13 +61,13 @@ def bot():
 
 print('Игра в конфеты\nПравила:\n1.Первый ход определяется жеребьёвкой ')
 print('2.За один ход можно забрать не более чем 28 конфет\n3.Все конфеты оппонента достаются сделавшему последний ход.')
-players = input('Вы хотите играть с ботом? Да/Нет: ')
+players = input('Вы хотите играть с ботом? Да/Нет: ').lower()
 candies = int(input('Сколько конфет на кону: '))
 
-if players == 'Да':
+if players == 'да':
     print('Первым ходит игрок')
     the_game(candies, players)
-elif players == 'Нет':
+elif players == 'нет':
     position = lottery()
     if position == 1:
         print(f'Первым ходит тот кто выбрал {position}')
